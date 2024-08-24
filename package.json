@@ -31,7 +31,6 @@
     "react-dnd-touch-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
-    "react-font": "^1.2.1",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
     "react-pdf": "^7.3.3",

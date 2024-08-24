@@ -1,7 +1,7 @@
 import { Card, Paper } from "@mui/material";
 import React, { useState, useEffect } from "react";
 
-import Font, { Text } from "react-font";
+// import Font, { Text } from "react-font";
 
 const MenuForm = () => {
   const [selectedMenuType, setSelectedMenuType] = useState("breakfast");
@@ -164,9 +164,13 @@ const MenuForm = () => {
       <div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-4 mt-6 md:grid-cols-2">
         {menuItems.map((menuItem, index) => (
           <div key={index}>
-            <Font family="Courier">
+            {/* <Font family="Courier">
               <h3 className="text-xl font-bold">{menuItem.menu_type} Menu:</h3>
-            </Font>
+            </Font> */}
+            <h3 className="text-xl font-bold font-mono">
+              {menuItem.menu_type} Menu:
+            </h3>
+
             <ul>
               <Card className="mb-4">
                 <Paper className="p-4">
