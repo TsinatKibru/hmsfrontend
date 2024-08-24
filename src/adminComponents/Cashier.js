@@ -8,8 +8,9 @@ import {
   StyleSheet,
   Image,
 } from "@react-pdf/renderer";
-import { Card, Button } from "@material-ui/core";
+
 import logo from "../images/logo.jfif";
+import { Button, Card } from "@mui/material";
 
 const styles = StyleSheet.create({
   page: {
