@@ -13,7 +13,9 @@ const DailyMenuList = () => {
 
   const fetchDailyMenus = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/daily-menulist");
+      const response = await fetch(
+        "https://hmsbackend-gamma.vercel.app/api/daily-menulist"
+      );
       const data = await response.json();
 
       // Filter menus by current date

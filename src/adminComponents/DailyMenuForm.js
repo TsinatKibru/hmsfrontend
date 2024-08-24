@@ -14,7 +14,9 @@ const MenuForm = () => {
 
   const fetchDishes = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/dishes/");
+      const response = await fetch(
+        "https://hmsbackend-gamma.vercel.app/api/dishes/"
+      );
       const data = await response.json();
       setDishes(data);
     } catch (error) {
@@ -69,7 +71,7 @@ const MenuForm = () => {
 
   const handleSubmitMenu = () => {
     menuItems.forEach((menu) => {
-      fetch("http://localhost:8000/api/daily-menus/", {
+      fetch("https://hmsbackend-gamma.vercel.app/api/daily-menus/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

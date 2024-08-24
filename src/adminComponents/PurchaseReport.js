@@ -25,7 +25,7 @@ const PurchaseHistoryList = () => {
   const fetchPurchaseHistory = async (date) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/purchaselist/?date=${date}`,
+        `https://hmsbackend-gamma.vercel.app/api/purchaselist/?date=${date}`,
         { headers }
       );
 

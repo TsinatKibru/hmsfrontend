@@ -324,7 +324,7 @@ const DishEdit = ({ edittable, onCancel }) => {
         })
       );
 
-      fetch(`http://localhost:8000/api/dishes/${edittable.id}/`, {
+      fetch(`https://hmsbackend-gamma.vercel.app/api/dishes/${edittable.id}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -358,12 +358,15 @@ const DishEdit = ({ edittable, onCancel }) => {
   useEffect(() => {
     const fetchIngredients = async () => {
       try {
-        const itemsData = await fetch(`http://localhost:8000/api/items/`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const itemsData = await fetch(
+          `https://hmsbackend-gamma.vercel.app/api/items/`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (itemsData.ok) {
           const items = await itemsData.json();

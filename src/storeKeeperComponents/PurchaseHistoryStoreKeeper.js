@@ -12,7 +12,7 @@ const PurchaseHistoryStoreKeeper = () => {
   const fetchPurchases = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/purchaselist/",
+        "https://hmsbackend-gamma.vercel.app/api/purchaselist/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ const PurchaseHistoryStoreKeeper = () => {
     try {
       // Update the purchase status
       await axios.put(
-        `http://localhost:8000/api/purchases/${purchaseId}/`,
+        `https://hmsbackend-gamma.vercel.app/api/purchases/${purchaseId}/`,
         {
           purchaseId: purchaseId,
           newStatus: newStatus,
@@ -93,25 +93,31 @@ const PurchaseHistoryStoreKeeper = () => {
 
         const updatedQuantity = purchase.item.quantity - quantity;
 
-        await axios.put(`http://localhost:8000/api/items/${itemId}/`, {
-          id: itemId,
-          quantity: updatedQuantity,
-          name: itemname,
-          price: itemprice,
-          threshold: itemthreshold,
-          category: itemcategory,
-          expiration_date: itemexpiration_date,
-        });
+        await axios.put(
+          `https://hmsbackend-gamma.vercel.app/api/items/${itemId}/`,
+          {
+            id: itemId,
+            quantity: updatedQuantity,
+            name: itemname,
+            price: itemprice,
+            threshold: itemthreshold,
+            category: itemcategory,
+            expiration_date: itemexpiration_date,
+          }
+        );
 
-        await axios.post("http://localhost:8000/api/notifications/", {
-          role: "storeKeeper",
-          entity_type: "Item",
-          entity_id: itemId,
-          entity: JSON.stringify(purchase.item),
-          action: "deducted",
-          amount: quantity,
-          seen: false,
-        });
+        await axios.post(
+          "https://hmsbackend-gamma.vercel.app/api/notifications/",
+          {
+            role: "storeKeeper",
+            entity_type: "Item",
+            entity_id: itemId,
+            entity: JSON.stringify(purchase.item),
+            action: "deducted",
+            amount: quantity,
+            seen: false,
+          }
+        );
       }
 
       // if (newStatus === "rejected") {
@@ -128,7 +134,7 @@ const PurchaseHistoryStoreKeeper = () => {
 
       //   const updatedQuantity = purchase.item.quantity - quantity;
 
-      //   await axios.put(`http://localhost:8000/api/items/${itemId}/`, {
+      //   await axios.put(`https://hmsbackend-gamma.vercel.app/api/items/${itemId}/`, {
       //     id: itemId,
       //     quantity: updatedQuantity,
       //     name: itemname,

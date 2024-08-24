@@ -9,7 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const baseUrl = "http://localhost:8000/api/";
+  const baseUrl = "https://hmsbackend-gamma.vercel.app/api/";
   const dispatch = useDispatch();
 
   const handleNav = () => {
@@ -19,16 +19,19 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api/login/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    });
+    const response = await fetch(
+      "https://hmsbackend-gamma.vercel.app/api/login/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }
+    );
 
     const data = await response.json();
 

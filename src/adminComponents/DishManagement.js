@@ -347,7 +347,7 @@ const DishTable = () => {
         })
       );
 
-      fetch("http://localhost:8000/api/dishes/", {
+      fetch("https://hmsbackend-gamma.vercel.app/api/dishes/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -379,12 +379,15 @@ const DishTable = () => {
   useEffect(() => {
     const fetchIngredients = async () => {
       try {
-        const itemsData = await fetch(`http://localhost:8000/api/items/`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const itemsData = await fetch(
+          `https://hmsbackend-gamma.vercel.app/api/items/`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (itemsData.ok) {
           const items = await itemsData.json();

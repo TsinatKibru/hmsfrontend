@@ -80,7 +80,7 @@ const App = () => {
   const getAccessTokenFromRefreshToken = async (refreshToken) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/obtain-access-token/",
+        "https://hmsbackend-gamma.vercel.app/api/obtain-access-token/",
         {
           refresh: refreshToken,
         }
@@ -138,7 +138,7 @@ const App = () => {
     dispatch(removeAllNotifications());
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/verify-token/`,
+        `https://hmsbackend-gamma.vercel.app/api/verify-token/`,
         {
           token,
         }

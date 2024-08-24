@@ -12,7 +12,9 @@ const ReportTable = () => {
 
   const fetchDishes = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/dishes/");
+      const response = await fetch(
+        "https://hmsbackend-gamma.vercel.app/api/dishes/"
+      );
       const data = await response.json();
 
       const dishes = data.map((dish) => {
@@ -79,7 +81,9 @@ const ReportTable = () => {
 
   const fetchTransferredItems = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/item-transfers/");
+      const response = await fetch(
+        "https://hmsbackend-gamma.vercel.app/api/item-transfers/"
+      );
       const data = await response.json();
       const filteredData = selectedDate
         ? data.filter(
@@ -125,7 +129,9 @@ const ReportTable = () => {
 
   const fetchOrderedDishes = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/orders/");
+      const response = await fetch(
+        "https://hmsbackend-gamma.vercel.app/api/orders/"
+      );
       const data = await response.json();
       const filteredData = selectedDate
         ? data.filter(

@@ -13,7 +13,9 @@ const DishList = () => {
 
   const fetchDishes = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/dishes/");
+      const response = await axios.get(
+        "https://hmsbackend-gamma.vercel.app/api/dishes/"
+      );
       setDishes(response.data);
     } catch (error) {
       console.error("Error fetching dishes:", error);

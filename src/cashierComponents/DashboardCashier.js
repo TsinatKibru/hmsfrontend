@@ -526,7 +526,9 @@ const DashboardCashier = () => {
 
   const fetchDishes = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/dishes/");
+      const response = await axios.get(
+        "https://hmsbackend-gamma.vercel.app/api/dishes/"
+      );
       setMenuItems(response.data);
       const updatedData = response.data.map((res) => {
         res.price = Number(res.price);

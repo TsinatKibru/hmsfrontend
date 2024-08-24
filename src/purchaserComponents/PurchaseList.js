@@ -10,7 +10,7 @@ const PurchaseList = () => {
     const fetchPurchases = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/purchaselist/",
+          "https://hmsbackend-gamma.vercel.app/api/purchaselist/",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -30,7 +30,7 @@ const PurchaseList = () => {
     try {
       // Update the purchase status
       await axios.patch(
-        `http://localhost:8000/api/purchases/${purchaseId}/`,
+        `https://hmsbackend-gamma.vercel.app/api/purchases/${purchaseId}/`,
         {
           status: newStatus,
         },
@@ -49,9 +49,12 @@ const PurchaseList = () => {
         const itemId = purchase.item.id;
         const updatedQuantity = purchase.item.quantity - quantity;
 
-        await axios.patch(`http://localhost:8000/api/items/${itemId}/`, {
-          quantity: updatedQuantity,
-        });
+        await axios.patch(
+          `https://hmsbackend-gamma.vercel.app/api/items/${itemId}/`,
+          {
+            quantity: updatedQuantity,
+          }
+        );
       }
 
       // Update the status locally in the purchases state

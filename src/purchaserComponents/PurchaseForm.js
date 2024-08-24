@@ -133,7 +133,7 @@ const PurchaseForm = () => {
 
         // Send POST request to create item
         const itemResponse = await axios.post(
-          "http://localhost:8000/api/items/",
+          "https://hmsbackend-gamma.vercel.app/api/items/",
           itemData
         );
         const item = itemResponse.data;
@@ -148,7 +148,7 @@ const PurchaseForm = () => {
 
         // Send POST request to create purchase
         await axios.post(
-          "http://localhost:8000/api/purchases/",
+          "https://hmsbackend-gamma.vercel.app/api/purchases/",
           purchaseData,
 
           {
@@ -159,15 +159,18 @@ const PurchaseForm = () => {
         );
 
         // Notify the storekeeper about the created item
-        await axios.post("http://localhost:8000/api/notifications/", {
-          role: "storeKeeper",
-          entity_type: "Item",
-          entity_id: itemResponse.data.id,
-          entity: JSON.stringify(itemResponse.data),
-          action: "added",
-          amount: purchaseData.quantity,
-          seen: false,
-        });
+        await axios.post(
+          "https://hmsbackend-gamma.vercel.app/api/notifications/",
+          {
+            role: "storeKeeper",
+            entity_type: "Item",
+            entity_id: itemResponse.data.id,
+            entity: JSON.stringify(itemResponse.data),
+            action: "added",
+            amount: purchaseData.quantity,
+            seen: false,
+          }
+        );
       }
 
       // Reset form fields

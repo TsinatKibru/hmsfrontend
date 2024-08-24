@@ -21,7 +21,7 @@ const NotificationsProducer = () => {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/notifications/"
+          "https://hmsbackend-gamma.vercel.app/api/notifications/"
         );
         const filteredresponse = response.data.filter(
           (res) => res.seen === false

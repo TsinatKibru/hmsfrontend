@@ -43,7 +43,7 @@ const NotificationStoreKeeper = () => {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/notifications/"
+          "https://hmsbackend-gamma.vercel.app/api/notifications/"
         );
         const filteredresponse = response.data.filter(
           (res) =>
@@ -100,7 +100,7 @@ const NotificationStoreKeeper = () => {
     };
     axios
       .put(
-        `http://localhost:8000/api/notifications/${notificationId}/`,
+        `https://hmsbackend-gamma.vercel.app/api/notifications/${notificationId}/`,
         tempNotificationObj
       )
       .then((response) => {
@@ -122,7 +122,7 @@ const NotificationStoreKeeper = () => {
       };
       axios
         .put(
-          `http://localhost:8000/api/notifications/${notification.id}/`,
+          `https://hmsbackend-gamma.vercel.app/api/notifications/${notification.id}/`,
           tempNotificationObj
         )
         .then((response) => {

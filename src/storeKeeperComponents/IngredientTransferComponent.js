@@ -61,7 +61,7 @@ const IngredientTransferComponent = () => {
           try {
             const encodedName = encodeURIComponent(item.name);
             await fetch(
-              `http://localhost:8000/api/items/name/${encodedName}/quantity/${convertedquntity}/`,
+              `https://hmsbackend-gamma.vercel.app/api/items/name/${encodedName}/quantity/${convertedquntity}/`,
               {
                 method: "PUT",
                 headers: {
