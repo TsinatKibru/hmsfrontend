@@ -102,7 +102,7 @@ const RequestFormComponent = ({ sender }) => {
   };
   const connectWebSocket = () => {
     const socket = new WebSocket(
-      "ws://hmsbackend-gamma.vercel.app/ws/item_transfer/"
+      "wss://hmsbackend-gamma.vercel.app/ws/item_transfer/"
     );
 
     socket.addEventListener("open", () => {

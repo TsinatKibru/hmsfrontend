@@ -167,7 +167,7 @@ const PurchaseHistory = () => {
   const checkSocketConnection = () => {
     if (socket === null || socket.readyState === WebSocket.CLOSED) {
       socket = new WebSocket(
-        "ws://hmsbackend-gamma.vercel.app/ws/notifications/"
+        "wss://hmsbackend-gamma.vercel.app/ws/notifications/"
       );
 
       socket.addEventListener("open", () => {
