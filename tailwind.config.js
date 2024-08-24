@@ -1,0 +1,73 @@
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        blueshade1: "#336699",
+        blueshade2: "#99CCFF",
+        White: "#FFFFFF",
+        Black: "#000000",
+        NeonBlue: "#00FFFF",
+        BabyBlue: "#8AAAE5",
+        FCF6F5: "#FCF6F5",
+        primary: "#686868",
+        secondary: "#0c0c13",
+        thirtiary: "#0a7272",
+        thirtiaryD: "#085e5e",
+        testbg: "#eaeaea",
+        lightgreen: "#a9e37c",
+        darkorange: "#ff8c00",
+        rust: "#72240a",
+
+        sky: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
+        },
+      },
+      width: {
+        "15rem": "20rem",
+        "27rem": "27rem",
+        "32rem": "32rem",
+        "64rem": "64rem",
+        "88rem": "88rem",
+        "91rem": "100vw",
+      },
+      margin: {
+        128: "76rem",
+        "68rem": "60rem",
+      },
+      minHeight: {
+        "15rem": "15rem",
+        "50rem": "50rem",
+      },
+      maxHeight: {
+        "15rem": "15rem",
+        "50rem": "50rem",
+        "45rem": "47rem",
+      },
+      borderWidth: {
+        0.5: "1px",
+      },
+      height: {
+        "15rem": "15rem",
+        "20rem": "20rem",
+        "25rem": "25rem",
+        "30rem": "30rem",
+        "40rem": "40rem",
+        "88rem": "88rem",
+        "54rem": "54rem",
+        "50rem": "50rem",
+        "57rem": "57rem",
+      },
+    },
+  },
+  plugins: [],
+};
