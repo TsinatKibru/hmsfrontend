@@ -166,7 +166,9 @@ const PurchaseHistoryStoreKeeper = () => {
 
   const checkSocketConnection = () => {
     if (socket === null || socket.readyState === WebSocket.CLOSED) {
-      socket = new WebSocket("ws://localhost:8000/ws/notifications/");
+      socket = new WebSocket(
+        "ws://hmsbackend-gamma.vercel.app/ws/notifications/"
+      );
 
       socket.addEventListener("open", () => {
         console.log("WebSocket connection established");

@@ -93,7 +93,9 @@ const IngredientTransferComponent = () => {
   };
 
   const connectWebSocket = () => {
-    const socket = new WebSocket("ws://localhost:8000/ws/item_transfer/");
+    const socket = new WebSocket(
+      "ws://hmsbackend-gamma.vercel.app/ws/item_transfer/"
+    );
 
     socket.addEventListener("open", () => {
       console.log("Item Transfer WebSocket connection established");

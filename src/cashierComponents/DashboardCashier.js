@@ -762,7 +762,9 @@ const DashboardCashier = () => {
   }, []);
 
   const connectWebSocket = () => {
-    const socket = new WebSocket("ws://localhost:8000/ws/order_exchange/");
+    const socket = new WebSocket(
+      "ws://hmsbackend-gamma.vercel.app/ws/order_exchange/"
+    );
 
     socket.addEventListener("open", () => {
       console.log("WebSocket connection established");
